@@ -1,8 +1,3 @@
-<script setup>
-import LanguageButton from '@/components/Elements/LanguageButton.vue';
-import Button from '@/components/Elements/Button.vue';
-</script>
-
 <template>
   <div class="footer">
     <div class="footer-content-top">
@@ -16,7 +11,7 @@ import Button from '@/components/Elements/Button.vue';
         <ul class="footer-menu">
           <li><router-link class="link" to="/">Accueil</router-link></li>
           <li><router-link class="link" to="/projects">Cosmoscope</router-link></li>
-          <li><router-link class="link" to="/conseillers">Articles</router-link></li>
+          <li><router-link class="link" to="/conseillers">Recherche</router-link></li>
           <li><router-link class="link" to="/candidatures">Ressources</router-link></li>
         </ul>
       </div>
@@ -40,10 +35,31 @@ import Button from '@/components/Elements/Button.vue';
       <p class="informations">
         Développé par AlgoJ - Tous droits réservés - 2023
       </p>
-      <Button />
+      <Button
+        :textButton="construction[0].text"/>
     </div>
   </div>
 </template>
+
+<script>
+import Button from '@/components/Elements/Button.vue';
+import LanguageButton from '@/components/Elements/LanguageButton.vue';
+
+export default {
+  name: 'Footer',
+  components: {
+    Button,
+    LanguageButton,
+  },
+  data: () => ({
+    construction: [
+      {
+        text: 'Retourner au début',
+      },
+    ],
+  }),
+};
+</script>
 
 <style lang="scss" scoped>
 @use '@/assets/styles/_colors.scss';
