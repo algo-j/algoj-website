@@ -99,11 +99,6 @@ li {
       }
     }
 
-    .line {
-      width: 70vw;
-      border-bottom: 1px solid grey;
-    }
-
     .footer-content-menu {
       display: flex;
       flex-direction: column;
@@ -122,6 +117,8 @@ li {
     align-items: center;
     justify-content: space-between;
     width: 70vw;
+    border-top: solid 1px colors.$gray;
+    padding-top: 5vh;
   }
 }
 
