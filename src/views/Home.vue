@@ -74,6 +74,10 @@ export default {
     flex-direction: column;
     gap: 15rem;
 
+    .cosmoscope {
+      margin-top: 10rem;
+    }
+
     .ressources {
       display: flex;
       flex-direction: column;

@@ -3,6 +3,7 @@
 
 <template>
   <div class="landing">
+    <img src="@/assets/images/landing-background.png" alt="background-Image" class="bckgrdImage">
   </div>
 </template>
 
@@ -11,7 +12,12 @@
   .landing {
     width: 100vw;
     height: 60vh;
-    background-image: url("/src/assets/images/landing-background.png");
+
+    .bckgrdImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
 </style>
