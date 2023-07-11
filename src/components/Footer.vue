@@ -97,6 +97,10 @@ li {
       .logo-algoj {
         width: 6rem;
       }
+
+      .tag {
+        font-size: 14px;
+      }
     }
 
     .footer-content-menu {
@@ -119,6 +123,53 @@ li {
     width: 70vw;
     border-top: solid 1px colors.$gray;
     padding-top: 5vh;
+  }
+}
+
+/* Responsive Design */
+
+@media (max-width: 800px) {
+  .footer {
+    height: 100%;
+    padding-top: 3rem;
+    gap: 2rem;
+
+    .footer-content-top {
+      flex-direction: column;
+      gap: 4rem;
+
+      .footer-content-left {
+        align-items: center;
+        gap: 1rem;
+
+        .logo-algoj {
+          width: 6rem;
+        }
+
+      }
+
+      .footer-content-menu {
+        align-items: center;
+        gap: 0.5rem;
+
+        .footer-menu {
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+    }
+
+    .footer-content-bottom {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 3rem 0;
+
+      .informations {
+        text-align: center;
+      }
+    }
   }
 }
 
