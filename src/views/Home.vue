@@ -87,4 +87,16 @@ export default {
   }
 }
 
+/* Responsive Design */
+
+@media only screen and (max-device-width : 730px) {
+
+  .home {
+    .navbar {
+      top: 1.5rem;
+    }
+  }
+
+}
+
 </style>
