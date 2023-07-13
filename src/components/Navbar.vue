@@ -1,21 +1,24 @@
 <script>
-
-const sidenav = document.getElementById('mySidenav');
-const openBtn = document.getElementById('openBtn');
-const closeBtn = document.getElementById('closeBtn');
-
-/* Set the width of the side navigation to 250px */
-function openNav() {
-  sidenav.classList.add('active');
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  sidenav.classList.remove('active');
-}
-
-openBtn.onclick = openNav;
-closeBtn.onclick = closeNav;
+export default {
+  name: 'Navbar',
+  data: () => ({
+    menuOpened: false,
+    onMobile: false,
+  }),
+  methods: {
+    reloadResponsive() {
+      this.onMobile = window.innerWidth <= 800;
+      if (!this.onMobile) this.menuOpened = false;
+    },
+  },
+  beforeMount() {
+    this.reloadResponsive();
+    const th = this;
+    window.addEventListener('resize', () => {
+      th.reloadResponsive();
+    });
+  },
+};
 
 </script>
 
@@ -41,22 +44,23 @@ closeBtn.onclick = closeNav;
       </router-link>
     </div>
     <div class="burger-menu">
-      <div id="mySidenav" class="sidenav">
-        <a id="closeBtn" href="#" class="close">&times;</a>
-        <ul>
-          <li><a href="#">A propos</a></li>
-          <li><a href="#">Nos services</a></li>
-          <li><a href="#">Témoignages</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+      <div :class="'burger-button ' + (menuOpened ? 'change' : '')"
+           v-if="onMobile"
+           @click="menuOpened = !menuOpened">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
       </div>
-      <a href="#" id="openBtn">
-        <span class="burger-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </a>
+      <transition name="fade">
+        <div class="phone-menu" v-if="menuOpened">
+          <h1 class="phone-menu-logo">AlgoJ</h1>
+          <div class="opened-button">
+            <a href="/">Cosmoscope</a>
+            <a href="/">Recherches</a>
+            <a href="/menu">Ressources</a>
+          </div>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -134,57 +138,46 @@ closeBtn.onclick = closeNav;
   .burger-menu {
     display: none;
 
-    .sidenav {
-      height: 100%;
-      width: 250px;
+    .burger-button {
+      z-index: 99;
+    }
+
+    .phone-menu {
       position: fixed;
-      z-index: 1;
+      z-index: 98;
+
+      width: 100vw;
+      height: 100vh;
       top: 0;
-      left: -250px;
-      background-color: #e8e8e8;
-      padding-top: 60px;
-      transition: left 0.5s ease;
-    }
-
-    .sidenav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    /* Sidenav menu links */
-    .sidenav a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
-
-    .sidenav a:hover {
-      color: #111;
-    }
-
-    /* Active class */
-    .sidenav.active {
       left: 0;
-    }
 
-    /* Close btn */
-    .sidenav .close {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-    }
+      background: colors.$white;
 
-    .burger-icon span {
-      display: block;
-      width: 35px;
-      height: 5px;
-      background-color: black;
-      margin: 6px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 30px;
+
+      .opened-button {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        a {
+          width: 100%;
+          text-align: center;
+          text-decoration: none;
+          color: colors.$black;
+
+          transition: .2s;
+
+          &:hover {
+            background: colors.$gray;
+            color: colors.$hover;
+          }
+        }
+      }
     }
   }
 }
@@ -203,15 +196,52 @@ closeBtn.onclick = closeNav;
       }
     }
 
-    .burger-menu {
-      display: block;
-    }
-
     .navbar-menu {
       display: none;
     }
-  }
 
+    .burger-menu {
+      display: block;
+      z-index: 1;
+
+      .bar1, .bar2, .bar3 {
+        z-index: 97;
+        width: 30px;
+        height: 4px;
+        background-color: colors.$black;
+        margin: 6px 0;
+        transition: 0.4s;
+        border-radius: 9px;
+      }
+
+      .change .bar1 {
+        -webkit-transform: rotate(-43deg) translate(-8px, 6px);
+        transform: rotate(-45deg) translate(-8px, 6px);
+      }
+
+      .change .bar2 {
+        opacity: 0;
+      }
+
+      .change .bar3 {
+        -webkit-transform: rotate(43deg) translate(-7x, -8px);
+        transform: rotate(45deg) translate(-7px, -8px);
+      }
+
+      header .navbar {
+        justify-content: space-between;
+        padding: 0 10%;
+      }
+    }
+
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity .5s;
+    }
+
+    .fade-enter, .fade-leave-to {
+      opacity: 0;
+    }
+  }
 }
 
 </style>
