@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-  <router-link to="/ressources" class="button">
+  <router-link to="/research" class="button">
     <p class="text">
       {{textButton}}
     </p>

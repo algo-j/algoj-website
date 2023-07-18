@@ -44,7 +44,7 @@ export default {
     ],
     button: [
       {
-        textButton: 'Découvrir le rapport détaillé',
+        textButton: 'Découvrir les rapports détaillés',
       },
     ],
   }),

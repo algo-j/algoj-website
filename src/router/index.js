@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import AlexandreCoutant from '@/views/Articles/AlexandreCoutant.vue';
 import Home from '../views/Home.vue';
 import LegalsMentions from '../views/Legals/LegalsMentions.vue';
 import Research from '../views/Research.vue';
@@ -19,6 +20,11 @@ const routes = [
     path: '/research',
     name: 'Research',
     component: Research,
+  },
+  {
+    path: '/research/conference-alexandre-coutant',
+    name: 'ConferenceAlexandreCoutant',
+    component: AlexandreCoutant,
   },
   /* {
     path: '*',

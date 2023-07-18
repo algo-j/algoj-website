@@ -7,57 +7,57 @@
       Articles AlgoJ
     </h1>
     <div class="article-list">
-      <router-link class="article-button" to="https://algoj.hypotheses.org/434">
+      <a class="article-button" href="https://algoj.hypotheses.org/434">
         <img src="@/assets/images/arrow.png" alt="arrow" class="arrow">
         Assembling fragments: a two-layer knowledge management tool to explore algorithms
         and their social functions
-      </router-link>
+      </a>
       <div class="line"></div>
-      <router-link class="article-button" to="https://algoj.hypotheses.org/449">
+      <router-link class="article-button" to="/research/conference-alexandre-coutant">
         <img src="@/assets/images/arrow.png" alt="arrow" class="arrow">
         Conférence d’Alexandre Coutant sur les publics de l’information
       </router-link>
       <div class="line"></div>
-      <router-link class="article-button" to="https://algoj.hypotheses.org/442">
+      <a class="article-button" href="https://algoj.hypotheses.org/442">
         <img src="@/assets/images/arrow.png" alt="arrow" class="arrow">
         Enjeux de la littératie algorithmique : rendre visible l’invisible
-      </router-link>
+      </a>
       <div class="line"></div>
-      <router-link class="article-button" to="https://algoj.hypotheses.org/371">
+      <ak class="article-button" href="https://algoj.hypotheses.org/371">
         <img src="@/assets/images/arrow.png" alt="arrow" class="arrow">
         L’éthique des données
-      </router-link>
+      </ak>
       <div class="line"></div>
-      <router-link class="article-button" to="https://algoj.hypotheses.org/366">
+      <a class="article-button" href="https://algoj.hypotheses.org/366">
         <img src="@/assets/images/arrow.png" alt="arrow" class="arrow">
         Un état de l’art de la data literacy
-      </router-link>
+      </a>
       <div class="line"></div>
-      <router-link class="article-button" to="https://algoj.hypotheses.org/340">
+      <a class="article-button" href="https://algoj.hypotheses.org/340">
         <img src="@/assets/images/arrow.png" alt="arrow" class="arrow">
         Journée d’étude. Les journalistes au défi des algorithmes
-      </router-link>
+      </a>
       <div class="line"></div>
-      <router-link class="article-button" to="https://algoj.hypotheses.org/447">
+      <a class="article-button" href="https://algoj.hypotheses.org/447">
         <img src="@/assets/images/arrow.png" alt="arrow" class="arrow">
         Enjeux définitionnels et scientifiques de la littératie algorithmique : entre
         mécanologie et rétro-ingénierie documentaire
-      </router-link>
+      </a>
       <div class="line"></div>
-      <router-link class="article-button" to="https://algoj.hypotheses.org/290">
+      <a class="article-button" href="https://algoj.hypotheses.org/290">
         <img src="@/assets/images/arrow.png" alt="arrow" class="arrow">
         Regaining control over algorithms: a hypervisual tool to get from awareness to knowledge
-      </router-link>
+      </a>
       <div class="line"></div>
-      <router-link class="article-button" to="https://algoj.hypotheses.org/115">
+      <a class="article-button" href="https://algoj.hypotheses.org/115">
         <img src="@/assets/images/arrow.png" alt="arrow" class="arrow">
         Quel traitement la presse française généraliste réserve-t-elle aux algorithmes ?
-      </router-link>
+      </a>
       <div class="line"></div>
-      <router-link class="article-button" to="https://algoj.hypotheses.org/89">
+      <a class="article-button" href="https://algoj.hypotheses.org/89">
         <img src="@/assets/images/arrow.png" alt="arrow" class="arrow">
         Présentation de l’Osintosphère
-      </router-link>
+      </a>
     </div>
   </div>
 </template>
