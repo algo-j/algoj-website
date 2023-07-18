@@ -1,5 +1,9 @@
 <template>
-  <router-view/>
+  <div class="app">
+    <Navbar class="navbar" />
+    <router-view/>
+    <Footer />
+  </div>
 </template>
 
 <style lang="scss">
@@ -22,7 +26,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .navbar {
+    position: fixed;
+    top: 3rem;
+  }
+}
+
 </style>
 
 <script setup>
+import Navbar from '@/components/Navbar.vue';
+import Footer from '@/components/Footer.vue';
 </script>

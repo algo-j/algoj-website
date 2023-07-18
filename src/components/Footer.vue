@@ -11,7 +11,7 @@
         <ul class="footer-menu">
           <li><router-link class="link" to="/">Accueil</router-link></li>
           <li><router-link class="link" to="/projects">Cosmoscope</router-link></li>
-          <li><router-link class="link" to="/conseillers">Recherche</router-link></li>
+          <li><router-link class="link" to="/research">Recherche</router-link></li>
           <li><router-link class="link" to="/candidatures">Ressources</router-link></li>
         </ul>
       </div>
@@ -19,7 +19,7 @@
         <h2 class="title">Mentions Légales</h2>
         <ul class="footer-menu">
           <li>
-            <router-link class="link" to="/legals">Mentions Légales</router-link>
+            <router-link class="link" to="/mentionslegales">Mentions Légales</router-link>
           </li>
           <li>
             <router-link class="link" to="/conditions-generales">Conditions Générales</router-link>
